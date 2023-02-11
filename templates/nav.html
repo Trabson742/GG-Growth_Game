@@ -1,0 +1,53 @@
+<nav class="pt-3">
+    <div class="row justify-content-around">
+        
+        <article class="col-2 " >           
+            <div style="height: 60%;width: 70%; margin: auto;">
+                <img src="{{url_for('static', filename='img/Blue-White-and-Black-Modern-Technology-Logo-(1).png')}}" style="height: 100%;" />
+            </div>
+        </article>
+        <article class="col-md-8 ">
+                <ul>
+                    <li class="dropdown border-bottom border-3 border-danger">
+                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" class="link-light" style="text-decoration: none;">
+                            Desafios 
+                        </a>
+                        <ul style="height: inherit; width: inherit;" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="{{url_for('Desafios_bp.painel')}}">Quadro de Desafios</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('Desafios_bp.index')}}">Listagem Desafios</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown border-bottom border-3 border-danger">
+                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" class="link-light" style="text-decoration: none;">
+                            Jogador 
+                        </a>
+                        <ul style="height: inherit; width: inherit;" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="{{url_for('Jogador_bp.historicos')}}">Histórico</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('Jogador_bp.conquistas')}}">Conquistas</a></li>
+                            <li><a class="dropdown-item" href="#">Ranking</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown border-bottom border-3 border-danger">
+                        <a href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" class="link-light" style="text-decoration: none;">
+                            Loja 
+                        </a>
+                        <ul style="height: inherit; width: inherit;" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="{{url_for('Mercado_bp.index')}}">Mercado</a></li>
+                            <li><a class="dropdown-item" href="{{url_for('Produtos_bp.index')}}">Listagem de Produtos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+        </article>
+        <article class="col-2 ">
+            <div class="d-flex align-items-center" style="height: 50%; width: 75%;">
+                <div class="ms-0">
+                    <p>{{session['user']['nome']}}</p>
+                    <p> <i class="fas fa-coins"></i> {{session['user']['moedas']}}</p>
+                </div>
+                <div class="" style="height: 65%;">
+                    <img class="rounded-circle" src="{{url_for('static', filename='img/temp.png')}}" style="height: 100%;" />
+                </div>
+              </div>
+        </article>
+    </div>
+</nav>

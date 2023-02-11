@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% block title %} Usuario {% endblock %}
+{% block content %}
+        <div>
+           <article>
+            <section>{{session['user']['nome']}}</section>
+            <section><button>{{session['user']['linkedin_id']}}</button></section>
+            <section><button>{{session['user']['id']}}</button></section>
+           </article> 
+        </div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'main.html' %}
+{% block title %} Novo Produto {% endblock %}
+{% block content %}
+        <header class="container">
+            <h1 class="h1 ">
+              <span class="border-bottom border-3 border-danger">
+                Novo Produto
+              </span>
+            </h1>
+        </header>
+        <div class="container">
+            <!-- <div><a href="/produtos/create"><button>Criar novo produto</button></a></div> -->
+            <form class="row g-3" action="{{ url_for('Produtos_bp.store') }}" method="post">
+                <div class="col-md-6">
+                  <label for="inputNome" class="form-label">Nome do Produto <span class="text-danger">*</span></label>
+                  <input required type="text" class="form-control" id="inputNome" name="nome" value="{{produto.nome|default('', true)}}">
+                </div>
+                <div class="col-md-3">
+                  <label for="inputPreco" class="form-label">Preço <span class="text-danger">*</span></label>
+                  <input required type="text" class="form-control" name="preco" value="{{produto.preco|default('', true)}}" id="inputPreco">
+                </div>
+                <div class="col-md-3">
+                  <label for="inputDesconto" class="form-label">Desconto</label>
+                  <input type="text" class="form-control" name="preco_desconto" value="{{produto.preco_desconto|default('', true)}}" id="inputDesconto">
+                </div>
+                <div class="col-6">
+                  <label for="inputMarca" class="form-label">Marca</label>
+                  <input type="text" class="form-control" name="marca" value="{{produto.marca|default('', true)}}" id="inputMarca" >
+                </div>
+                <div class="col-6">
+                  <label for="inputModelo" class="form-label">Modelo</label>
+                  <input type="text" class="form-control" name="modelo" value="{{produto.modelo|default('', true)}}" id="inputModelo" >
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCategoria" class="form-label">Categoria</label>
+                    <select id="inputCategoria" class="form-select" name="categoria">
+                      <option selected="{{produto.categoria}}">Selecione a Categoria</option>
+                      <option value="teste">teste</option>
+                      <option>...</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                  <label for="inputAno" class="form-label">Ano</label>
+                  <input type="text" class="form-control" name="ano" value="{{produto.ano|default('', true)}}" id="inputAno">
+                </div>
+                <div class="col-md-3">
+                  <label for="inputQuantidade" class="form-label">Quantidade</label>
+                  <input type="text" class="form-control" name="quantidade" value="{{produto.quantidade_estoque|default('', true)}}" id="inputQuantidade">
+                </div>
+                <div class="col-md-12">
+                  <label for="inputDescricao" class="form-label">Descrição</label>
+                  <textarea id="inputDescricao" class="form-control" name="descricao" value="{{produto.descricao|default('', true)}}" name="" id=""  rows="3"></textarea>
+                  <!-- <input type="text" class="form-control" name="nome" value="{{produto.nome|default('', true)}}" id="inputCity"> -->
+                </div>
+                <div class="col-md-4">
+                  <label for="inputIMG" class="form-label">Adicionar imagem(*.png)</label>
+                  <input type="file" class="form-control" name="imagem" value="{{produto.imagem|default('', true)}}" id="inputIMG">
+                </div>
+                <div class="col-6 d-flex align-items-center ">
+                  <div class="form-check">
+                    <input class="form-check-input big-checkbox" type="checkbox" id="gridCheck" name="ativo" value="{{produto.ativo|default('', true)}}">
+                    <label class="form-check-label" for="gridCheck">
+                      Produto Ativo
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    {% if produto.id %}
+                        Editar
+                    {% else %}
+                        Cadastrar
+                    {% endif %}
+                    Produto
+                  </button>
+                </div>
+              </form>
+        </div>
+{% endblock %}

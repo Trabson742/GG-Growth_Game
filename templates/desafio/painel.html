@@ -1,0 +1,78 @@
+{% extends 'main.html' %}
+{% block title %} Desafios {% endblock %}
+{% block content %}
+        <div class="container">
+          <div class="card_template border border-5" style="border-style: double !important;">
+            <div class="card">
+              <div class="box">
+                <div class="content">
+                  <h3>Jornada em PHP</h3>
+                  <p></p>
+                  <a href="#">Saber Mais</a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="box">
+                <div class="content">
+                  <h3>Card Two</h3>
+                  <p></p>
+                  <a href="#">Saber Mais</a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="box">
+                <div class="content">
+                  <h3>Card Three</h3>
+                  <p></p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="box">
+                <div class="content">
+                  <h2>01</h2>
+                  <h3>Card One</h3>
+                  <p></p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="box">
+                <div class="content">
+                  <h2>02</h2>
+                  <h3>Card Two</h3>
+                  <p></p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="box">
+                <div class="content">
+                  <h2>03</h2>
+                  <h3>Card Three</h3>
+                  <p></p>
+                  <a href="#">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+                    {% for desafio in desafios %}
+                    <!-- <tr>
+                        <th scope="row">{{desafio.nome}}</th>
+                        <td>{{desafio.marca}}</td>
+                        <td>{{desafio.categoria}}</td>
+                        <td>{{desafio.ano}}</td>
+                        <td><a href="{{url_for('Desafios_bp.show',id=desafio.id)}}"><button>edit</button></a><button>lixo</button></td>
+                    </tr> -->
+                    {% endfor %}
+        </div>
+{% endblock %}

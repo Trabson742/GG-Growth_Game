@@ -1,0 +1,115 @@
+[
+    {
+      "model": "models.Tables.Conquista",
+      "data": [
+        {
+            "titulo" : "Um Novo Mundo lhe Aguarda",
+            "moedas" : 5,
+            "dificuldade" : "baixa",
+            "descricao" : "{Primeiro Login no Sistema} Conquista de primeiro login no sistema, recebida sempre para usuários novos",
+            "insignia" : "bronze"
+        },
+        {
+            "titulo" : "Vamos à Batalha",
+            "moedas" : 5,
+            "dificuldade" : "baixa",
+            "descricao" : "{Primeiro Desafio Aceito} Conquista ganha após se cadastrar para um desafio proposto",
+            "insignia" : "bronze"
+        },
+        {
+            "titulo" : "Primeira Batalha Vencida",
+            "moedas" : 10,
+            "dificuldade" : "baixa",
+            "descricao" : "{Primeiro Desafio Concluido} Conquista de primeiro login no sistema, recebida sempre para usuários novos",
+            "insignia" : "bronze"
+        },
+        {
+            "titulo" : "É Perigoso ir Sozinho, Take This",
+            "moedas" : 15,
+            "dificuldade" : "baixa",
+            "descricao" : "Conquista de primeiro login no sistema, recebida sempre para usuários novos",
+            "insignia" : "bronze"
+        }
+      ]
+    },
+    {
+      "model": "models.Tables.User",
+      "data": [
+        {
+            "linkedin_id":"77kE_FcGF3",
+            "nome": "Rafael Alves",
+            "avatar": "urn:li:digitalmediaAsset:C4E03AQGu-IjuGzdKPA"
+        }
+      ]
+    },
+    {
+      "model": "models.Tables.Carteira",
+      "data": [
+        {
+            "user_id":"1",
+            "moedas": 100,
+            "conquistas": 5
+        }
+      ]
+    },
+    {
+      "model": "models.Tables.Desafio",
+      "data": [
+        {
+            "titulo" : "Inicio da Jornada",
+            "moedas" : "10",
+            "data_inicio" : "2023-02-10",
+            "data_final" : "2023-12-30",
+            "grupo" : "teste 1",
+            "categoria" : "Iniciante",
+            "situacao" : "Pendente",
+            "banner" : "teste 2",
+            "card" : "teste 3"
+        }
+      ]
+    },
+    {
+      "model": "models.Tables.Produto",
+      "data": [
+        {
+            "nome" : "Cupom Ifood",
+            "preco" : 30,
+            "preco_desconto" : 0,
+            "marca" : "Ifood",
+            "modelo" : "Cupom",
+            "categoria" : "Teste",
+            "ano" : "2023",
+            "quantidade_estoque" : "30",
+            "descricao" : "Cupom de R$10.00 de desconto",
+            "imagem" : "ifood",
+            "ativo" : 1
+        },
+        {
+            "nome" : "Cupom Ifood",
+            "preco" : 60,
+            "preco_desconto" : 0,
+            "marca" : "Ifood",
+            "modelo" : "Cupom",
+            "categoria" : "Teste",
+            "ano" : "2023",
+            "quantidade_estoque" : "30",
+            "descricao" : "Cupom de R$20.00 de desconto",
+            "imagem" : "ifood",
+            "ativo" : 1
+        },
+        {
+            "nome" : "Cupom Ifood",
+            "preco" : 90,
+            "preco_desconto" : 0,
+            "marca" : "Ifood",
+            "modelo" : "Cupom",
+            "categoria" : "Teste",
+            "ano" : "2023",
+            "quantidade_estoque" : "30",
+            "descricao" : "Cupom de R$30.00 de desconto",
+            "imagem" : "ifood",
+            "ativo" : 1
+        }
+      ]
+    }
+  ]

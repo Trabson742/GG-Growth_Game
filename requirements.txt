@@ -1,0 +1,12 @@
+requests
+sqlalchemy
+python-dotenv
+flask_migrate
+Flask
+sqlalchemyseed
+app
+flask_app
+jinja2
+markupsafe
+Flask-SQLAlchemy
+Flask-WTF

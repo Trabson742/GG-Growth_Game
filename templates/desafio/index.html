@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+{% block title %} Desafios {% endblock %}
+{% block content %}
+        <div class="container">
+          <div><a href="{{url_for('Desafios_bp.create')}}"><button class="btn btn-primary btn-lg">Criar novo Desafio</button></a></div>
+          <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Titulo do Desafio</th>
+                    <th scope="col">Data</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Situação</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for desafio in desafios %}
+                    <tr>
+                        <th scope="row">{{desafio.titulo}}</th>
+                        <td>{{desafio.data_inicio}}</td>
+                        <td>{{desafio.categoria}}</td>
+                        <td>{{desafio.situacao}}</td>
+                        <td>
+                          <a href="{{url_for('Desafios_bp.show',id=desafio.id)}}"><button class="btn btn-sm btn-primary">edit</button></a>
+                          <a href=""><button class="btn btn-sm btn-danger">lixo</button></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+        </div>
+{% endblock %}

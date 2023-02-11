@@ -1,0 +1,72 @@
+{% extends 'main.html' %}
+{% block title %} Novo Desafio {% endblock %}
+{% block content %}
+        <header class="container">
+            <h1 class="h1 ">
+              <span class="border-bottom border-3 border-danger">
+                Novo Desafio
+              </span>
+            </h1>
+        </header>
+        <div class="container">
+            <!-- <div><a href="/produtos/create"><button>Criar novo produto</button></a></div> -->
+            <form class="row g-3" action="{{ url_for('Desafios_bp.store') }}" method="post">
+              <div class="col-md-8">
+                  <label for="inputNome" class="form-label">Título do Desafio <span class="text-danger">*</span></label>
+                  <input required type="text" class="form-control" id="inputNome" name="titulo" value="{{desafio.titulo|default('', true)}}">
+                </div>
+                <div class="col-md-4">
+                  <label for="inputPreco" class="form-label">Prêmio <span class="text-danger">*</span></label>
+                  <input required type="text" class="form-control" name="moedas" value="{{desafio.moedas|default('', true)}}" id="inputPreco">
+                </div>
+                <div class="col-md-12">
+                  <label for="inputDescricao" class="form-label">Descrição</label>
+                  <textarea id="inputDescricao" class="form-control" name="descricao" value="{{desafio.descricao|default('', true)}}" name="" id=""  rows="3"></textarea>
+                  <!-- <input type="text" class="form-control" name="nome" value="{{desafio.nome|default('', true)}}" id="inputCity"> -->
+                </div>
+                <div class="col-3">
+                  <label for="inputDataIninio" class="form-label">Prazo do Desafio</label>
+                  <input type="date" class="form-control" name="data_inicio" value="{{desafio.data_inicio|default('', true)}}" id="inputDataIninio" >
+                </div>
+                <div class="col-3">
+                  <label for="inputDataFinal" class="form-label">à</label>
+                  <input type="date" class="form-control" name="data_final" value="{{desafio.data_final|default('', true)}}" id="inputDataFinal">
+                </div>
+                <div class="col-6">
+                  <label for="inputModelo" class="form-label">Grupo do Desafio</label>
+                  <input type="text" class="form-control" name="grupo" value="{{desafio.modelo|default('', true)}}" id="inputModelo" >
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCategoria" class="form-label">Categoria</label>
+                    <select id="inputCategoria" class="form-select" name="categoria">
+                      <option selected>Selecione a Categoria</option>
+                      <option>Teste</option>
+                      <option>...</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                  <label for="inputAno" class="form-label">Situação</label>
+                  <input type="text" class="form-control" name="situacao" value="{{desafio.ano|default('', true)}}" id="inputAno">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputIMG" class="form-label">Adicionar imagem Banner(*.png)</label>
+                  <input type="file" class="form-control" name="imagem" value="{{desafio.imagem|default('', true)}}" id="inputIMG">
+                </div>
+                <div class="col-md-6">
+                  <label for="inputIMG" class="form-label">Adicionar imagem Card(*.png)</label>
+                  <input type="file" class="form-control" name="imagem" value="{{desafio.imagem|default('', true)}}" id="inputIMG">
+                </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                  <button type="submit" class="btn btn-primary btn-lg">
+                    {% if desafio.id %}
+                        Editar
+                    {% else %}
+                        Cadastrar
+                    {% endif %}
+                    Desafio
+                  </button>
+                </div>
+              </form>
+        </div>
+{% endblock %}

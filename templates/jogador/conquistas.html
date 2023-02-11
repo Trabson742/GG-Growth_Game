@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% block title %} Conquistas {% endblock %}
+{% block content %}
+        <div class="container">
+          <div class="card_template border border-5" style="border-style: double !important;">
+            {% for conquista in conquistas %}
+            
+              <div class="card">
+                <div class="box">
+                  <div class="content">
+                    <h4>{{conquista.titulo}}</h4>
+                    <span>{{conquista.descricao}}</span>
+                    <img src="{{ url_for('static', filename='/'.join(['img', conquista.insignia+'.webp'])) }}" alt="">
+                    <!-- <a href="#">Saber Mais</a> -->
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+{% endblock %}
